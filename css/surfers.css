@@ -211,6 +211,10 @@ a {
   font-family: Montserrat;
 }
 
+.tab-content {
+  display: none;
+}
+
 .content-text-slide ul {
   border-bottom: 1px solid #ECECEC;
   width: 396px; 
@@ -237,6 +241,7 @@ a {
 }
 
 .active {
+
   color: black !important ;
   font-weight: bold;
   border-bottom: 3px solid #00B0FF;
@@ -246,13 +251,12 @@ a {
   display: inline-block;
 }
 
-#description {
+.tab-content {
   width: 390px;
-  display: inline-block;
   margin-top: 9px;
 }
 
-#description p{
+.tab-content p{
   color: #868686;
   line-height: 22px;
   font-family: Raleway;
