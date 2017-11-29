@@ -166,13 +166,13 @@ a {
   vertical-align: top;
 }
 
-.content-image-slide {
-  display: inline-block;
-}
-
 .content-image-slide img {
   margin-left: 60px;
   margin-top: 75px;
+}
+
+.active-images {
+  border: 2px solid #00B0FF;
 }
 
 .list-image-slide {
@@ -213,6 +213,14 @@ a {
 
 .tab-content {
   display: none;
+  width: 390px;
+  margin-top: 9px;
+}
+
+.tab-content p{
+  color: #868686;
+  line-height: 22px;
+  font-family: Raleway;
 }
 
 .content-text-slide ul {
@@ -249,17 +257,6 @@ a {
 
 .rating {
   display: inline-block;
-}
-
-.tab-content {
-  width: 390px;
-  margin-top: 9px;
-}
-
-.tab-content p{
-  color: #868686;
-  line-height: 22px;
-  font-family: Raleway;
 }
 
 .price-buy {
