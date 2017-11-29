@@ -45,6 +45,12 @@ a {
   font-weight: bold;
 }
 
+.logo:hover {
+  color: white;
+  cursor: pointer;
+}
+
+
 .nav {
   display: inline-block;
 }
