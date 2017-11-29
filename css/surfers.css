@@ -171,15 +171,22 @@ a {
   margin-top: 75px;
 }
 
-.active-images {
-  border: 2px solid #00B0FF;
-}
 
 .list-image-slide {
   display: inline-block;
   vertical-align: top;
   margin-top: 183px;
   margin-left: 20px;
+}
+
+.list-image-slide img {
+  border: 1px solid #868686;
+  width: 70px;
+  height: 70px;
+}
+
+.active-images {
+  border: 2px solid #00B0FF !important;
 }
 
 .right-background-slide {
