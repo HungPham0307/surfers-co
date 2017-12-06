@@ -49,6 +49,29 @@ $(document).ready(function() {
     return false;
   });
 
+  var w = $(window).width();
 
+
+  if(w<=767) {
+    var w2 = $(window).width();
+    $('.background-slide').css('width',(w2));
+    $('.background-slide').css('height',w2);
+    $('.content-image-slide img').css('height',w2);
+  }
+  
+  $(window).resize(function(){
+    var w = $(window).width();
+    if(w<=767) {
+      var w2 = $(window).width();
+      $('.background-slide').css('width',(w2));
+      $('.background-slide').css('height',w2);
+      $('.content-image-slide img').css('height',w2);
+    } else {
+       $('.background-slide').css('width','1080px');
+       $('.background-slide').css('height','650px');
+       $('.content-image-slide img').css('height','auto');
+    }
+    
+  });
 
 })
