@@ -147,7 +147,7 @@
   </header>
   <!--  end header -->
   <!--  about-us -->
- 
+
   <div class="main-about-us">
     <div class="container text-title">
       <p class="title-about-us">ABOUT US</p>
@@ -171,11 +171,11 @@
       </div>
       <div class="video-about-us">
         <video poster="images/video-icon.png" >
-        <source src="http://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-        </video>
+          <source src="http://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+          </video>
+        </div>
       </div>
     </div>
-  </div>
     
     <!--  end about-us -->
     <!-- our-team -->
@@ -225,7 +225,7 @@
               <p class="address-team">San Clemente, CA</p> 
             </div>
           </div>
-        
+
           <!-- Left and right controls -->
           <a class="left-carousel-control" href="javascript:void(0)" onclick="">
 
@@ -236,7 +236,7 @@
         </div>
       </div>
     </div>
-  
+
     <!--  end our-team -->
 
     <div class="latest-update">
@@ -348,44 +348,49 @@
       </div>
     </footer>
 
-  <script type="text/javascript">
+    <script type="text/javascript">
 
   //menu header
-    function myFunction() {
-      var x = document.getElementById("myTopNav");
-      if (x.className === "nav") {
-        x.className += " responsive";
-      } else {
-        x.className = "nav";
-      }
+  function myFunction() {
+    var x = document.getElementById("myTopNav");
+    if (x.className === "nav") {
+      x.className += " responsive";
+    } else {
+      x.className = "nav";
     }
+  }
 
    // slide 
-    var a = $(window).width();
-    var x = document.getElementsByClassName("item-our-team");
+   var a = $(window).width(); //lay do rong man hinh
+   var x = document.getElementsByClassName("item-our-team");
 
-      var slideIndex = 1;
-      
-
-      function plusDivs(n) {
-        showDivs(slideIndex += n);
-      }
-
-      function showDivs(n) {
-        var i;
-        
-        if (n > x.length) {slideIndex = 1}    
-        if (n < 1) {slideIndex = x.length}
-        for (i = 0; i < x.length; i++) {
-           x[i].style.display = "none";  
-        }
-        x[slideIndex-1].style.display = "inline-block";  
-      }
+   var slideIndex = 1;
+   function plusDivs(n) {
+    showDivs(slideIndex += n);
+  }
 
 
-    if (a<=767) {
+  function showDivs(n) {
+    var i;
+    if (n > x.length) {
+      // slide dang o anh cuoi cung va click sang phai .slideIndex=1 de hien thi ve anh dau tien
+      slideIndex = 1 ;
+    }    
+    if (n < 1) {
+     // slide dang o anh dau tien va click sang trai .slideIndex= x.lenght de hien thi anh cuoi cung
+      slideIndex = x.length ;
+    }
+
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";  //an tat ca anh
+    }
+    x[slideIndex-1].style.display = "inline-block";  //hien thi phan tu thu [slideIndex-1] trong mang
+  }
+
+     if (a<=767) { //pham vi reponsive
+      //hien thi anh dau tien
       showDivs(slideIndex);
-      $('.left-carousel-control').attr('onclick','plusDivs(-1)');
+      $('.left-carousel-control').attr('onclick','plusDivs(-1)'); //add function plusDiv khi co reponsive
       $('.right-carousel-control').attr('onclick','plusDivs(1)');
       
     } else {
@@ -394,24 +399,22 @@
     }
 
     $(window).resize(function(){
-
       var b = $(window).width();
       if(b<=767) {
         showDivs(slideIndex);
         $('.left-carousel-control').attr('onclick','plusDivs(-1)');
         $('.right-carousel-control').attr('onclick','plusDivs(1)');
-       
+
       } else {
-        $('.left-carousel-control').attr('onclick','');
+        $('.left-carousel-control').attr('onclick',''); //xoa function plusDiv khi k co reponsiv
         $('.right-carousel-control').attr('onclick','');
         for (i = 0; i < x.length; i++) {
-             x[i].style.display = "inline-block";  
-          }
-      }
-    
-  });
+         x[i].style.display = "inline-block";  
+       }
+     }
+   });
 
 
-  </script>
-  </body>
+ </script>
+</body>
 </html>
