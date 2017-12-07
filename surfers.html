@@ -227,10 +227,10 @@
           </div>
         
           <!-- Left and right controls -->
-          <a class="left-carousel-control" href="javascript:void(0)" onclick="plusDivs(-1);">
+          <a class="left-carousel-control" href="javascript:void(0)" onclick="">
 
           </a>
-          <a class="right-carousel-control"  href="javascript:void(0)" onclick="plusDivs(1);">
+          <a class="right-carousel-control"  href="javascript:void(0)" onclick="">
 
           </a>
         </div>
@@ -347,7 +347,10 @@
         </div>
       </div>
     </footer>
+
   <script type="text/javascript">
+
+  //menu header
     function myFunction() {
       var x = document.getElementById("myTopNav");
       if (x.className === "nav") {
@@ -357,23 +360,58 @@
       }
     }
 
-    var slideIndex = 1;
-    showDivs(slideIndex);
+   // slide 
+    var a = $(window).width();
+    var x = document.getElementsByClassName("item-our-team");
 
-    function plusDivs(n) {
-      showDivs(slideIndex += n);
-    }
+      var slideIndex = 1;
+      
 
-    function showDivs(n) {
-      var i;
-      var x = document.getElementsByClassName("item-our-team");
-      if (n > x.length) {slideIndex = 1}    
-      if (n < 1) {slideIndex = x.length}
-      for (i = 0; i < x.length; i++) {
-         x[i].style.display = "none";  
+      function plusDivs(n) {
+        showDivs(slideIndex += n);
       }
-      x[slideIndex-1].style.display = "inline-block";  
+
+      function showDivs(n) {
+        var i;
+        
+        if (n > x.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = x.length}
+        for (i = 0; i < x.length; i++) {
+           x[i].style.display = "none";  
+        }
+        x[slideIndex-1].style.display = "inline-block";  
+      }
+
+
+    if (a<=767) {
+      showDivs(slideIndex);
+      $('.left-carousel-control').attr('onclick','plusDivs(-1)');
+      $('.right-carousel-control').attr('onclick','plusDivs(1)');
+      
+    } else {
+      $('.left-carousel-control').attr('onclick','');
+      $('.right-carousel-control').attr('onclick','');
     }
+
+    $(window).resize(function(){
+
+      var b = $(window).width();
+      if(b<=767) {
+        showDivs(slideIndex);
+        $('.left-carousel-control').attr('onclick','plusDivs(-1)');
+        $('.right-carousel-control').attr('onclick','plusDivs(1)');
+       
+      } else {
+        $('.left-carousel-control').attr('onclick','');
+        $('.right-carousel-control').attr('onclick','');
+        for (i = 0; i < x.length; i++) {
+             x[i].style.display = "inline-block";  
+          }
+      }
+    
+  });
+
+
   </script>
   </body>
 </html>
